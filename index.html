@@ -1,111 +1,59 @@
-
-Stacey Gilbert <stagilbert@gmail.com>
-8:22 AM (0 minutes ago)
-to me
-
 <!DOCTYPE html>
 <html>
 <head>
 <title>Bright Steps Canada</title>
 <style>
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: #f8fbff;
-color: #1f2d3d;
-}
-
-header {
-background: #ffffff;
-padding: 20px 40px;
-text-align: center;
-border-bottom: 1px solid #e5e5e5;
-}
-
-header h1 {
-margin: 0;
-color: #2b7a78;
-font-size: 34px;
-}
-
-header p {
-margin: 6px 0 0;
-color: #555;
-}
+body { margin:0; font-family:Arial, sans-serif; color:#06264a; background:#fff; }
+header { display:flex; justify-content:space-between; align-items:center; padding:20px 8%; background:white; }
+.logo { font-size:28px; font-weight:bold; }
+.logo span { color:#e5a018; }
+nav a { margin:0 12px; text-decoration:none; color:#06264a; font-weight:bold; }
+.donate { background:#e5a018; color:white; padding:12px 25px; border-radius:30px; text-decoration:none; font-weight:bold; }
 
 .hero {
-text-align: center;
-padding: 70px 25px;
-background: linear-gradient(135deg, #dff6f0, #fff4cc);
+display:flex; align-items:center; justify-content:space-between;
+padding:70px 8%;
+background:linear-gradient(to right, #fff 35%, #f7d89b);
+}
+.hero-text { max-width:480px; }
+h1 { font-size:56px; line-height:1.05; margin:0; }
+h1 span, h2 span { color:#e5a018; }
+p { line-height:1.6; font-size:17px; }
+.btn { display:inline-block; margin:10px 10px 0 0; padding:14px 24px; border-radius:8px; text-decoration:none; font-weight:bold; }
+.gold { background:#e5a018; color:white; }
+.outline { border:2px solid #06264a; color:#06264a; }
+
+.hero-img {
+width:430px; height:330px; border-radius:25px;
+background:linear-gradient(#ffd98a,#a66a20);
+display:flex; align-items:center; justify-content:center;
+font-size:95px;
 }
 
-.hero h2 {
-font-size: 42px;
-margin-bottom: 15px;
-color: #173f5f;
-}
+.values { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; background:#06264a; color:white; padding:30px 8%; }
+.value { border-right:1px solid rgba(255,255,255,.3); padding-right:20px; }
+.value h3 { color:#e5a018; }
 
-.hero p {
-font-size: 20px;
-max-width: 700px;
-margin: 0 auto 30px;
-line-height: 1.6;
-}
+section { padding:55px 8%; }
+.split { display:grid; grid-template-columns:1fr 1fr; gap:45px; align-items:center; }
+.photo-box { background:#f4eadc; border-radius:18px; padding:50px; text-align:center; font-size:90px; }
 
-.button {
-display: inline-block;
-background: #f9a826;
-color: white;
-padding: 14px 28px;
-border-radius: 30px;
-text-decoration: none;
-font-weight: bold;
-margin: 8px;
-}
+.center { text-align:center; }
+.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:25px; }
+.card { background:#faf7f2; padding:28px; border-radius:16px; box-shadow:0 4px 10px rgba(0,0,0,.06); }
+.card h3 { color:#06264a; }
 
-.button.secondary {
-background: #2b7a78;
-}
+.cta { background:linear-gradient(to right,#fff3dd,#f1c77b); }
+footer { background:#06264a; color:white; padding:35px 8%; }
+footer h3 { color:#e5a018; }
 
-section {
-padding: 50px 25px;
-max-width: 1000px;
-margin: auto;
-}
-
-.cards {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 20px;
-}
-
-.card {
-background: white;
-padding: 25px;
-border-radius: 18px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-text-align: center;
-}
-
-.card h3 {
-color: #2b7a78;
-}
-
-.mission {
-text-align: center;
-}
-
-.mission h2, section h2 {
-color: #173f5f;
-font-size: 30px;
-}
-
-footer {
-background: #173f5f;
-color: white;
-text-align: center;
-padding: 25px;
-margin-top: 40px;
+@media(max-width:800px){
+header, .hero, .split { display:block; text-align:center; }
+nav { margin-top:15px; }
+nav a { display:block; margin:8px; }
+h1 { font-size:40px; }
+.hero-img { width:100%; margin-top:30px; }
+.values, .cards { grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -113,43 +61,53 @@ margin-top: 40px;
 <body>
 
 <header>
-<h1>Bright Steps Canada</h1>
-<p>Helping children move forward, one step at a time.</p>
+<div class="logo">Bright Steps <span>Canada</span></div>
+<nav>
+<a href="#mission">About</a>
+<a href="#help">How We Help</a>
+<a href="#support">Get Involved</a>
+<a href="#contact">Contact</a>
+</nav>
+<a class="donate" href="#support">Donate</a>
 </header>
 
 <div class="hero">
-<h2>Creating brighter futures for children in need</h2>
-<p>
-Bright Steps Canada is being built to help children and families access
-meaningful support, medical equipment, mobility items, and moments of hope
-when they need it most.
-</p>
-<a href="#help" class="button">Apply for Help</a>
-<a href="#support" class="button secondary">Support Our Mission</a>
+<div class="hero-text">
+<h1>Creating brighter futures for <span>children</span> in need.</h1>
+<p>Bright Steps Canada is being built to help children and families access equipment, support, and moments of joy they need to live, move, and thrive.</p>
+<a class="btn gold" href="#help">Apply for Help</a>
+<a class="btn outline" href="#support">Support Our Mission</a>
+</div>
+<div class="hero-img">♿💛</div>
 </div>
 
-<section class="mission">
+<div class="values">
+<div class="value"><h3>Compassion</h3><p>We lead with kindness in everything we do.</p></div>
+<div class="value"><h3>Inclusion</h3><p>Every child deserves the chance to belong.</p></div>
+<div class="value"><h3>Empowerment</h3><p>We help families build stronger tomorrows.</p></div>
+<div class="value"><h3>Hope</h3><p>Small steps today, brighter futures tomorrow.</p></div>
+</div>
+
+<section id="mission" class="split">
+<div>
 <h2>Our Mission</h2>
-<p>
-Our mission is to support children facing health, mobility, or life challenges
-by helping provide access to essential equipment, family support, and uplifting
-experiences that bring comfort, dignity, and joy.
-</p>
+<p>Our mission is to support children facing health, mobility, or life challenges by helping provide access to essential equipment, family support, and uplifting experiences that bring comfort, dignity, and joy.</p>
+<a class="btn gold" href="#support">Learn More</a>
+</div>
+<div class="photo-box">🧸💙</div>
 </section>
 
-<section>
-<h2 style="text-align:center;">What We Hope to Support</h2>
+<section id="help" class="center">
+<h2>How We Help</h2>
 <div class="cards">
 <div class="card">
 <h3>Mobility Equipment</h3>
-<p>Helping children access items such as wheelchairs, adaptive equipment, and mobility supports.</p>
+<p>Helping children access wheelchairs, adaptive equipment, and mobility supports.</p>
 </div>
-
 <div class="card">
 <h3>Family Support</h3>
-<p>Helping families during stressful seasons with practical support and community care.</p>
+<p>Helping families during challenging seasons with practical support and care.</p>
 </div>
-
 <div class="card">
 <h3>Moments of Joy</h3>
 <p>Creating special experiences that help children feel seen, celebrated, and encouraged.</p>
@@ -157,26 +115,17 @@ experiences that bring comfort, dignity, and joy.
 </div>
 </section>
 
-<section id="help" class="mission">
-<h2>Need Support?</h2>
-<p>
-We are currently in the early stages of building Bright Steps Canada.
-More information about referrals, applications, and eligibility will be available soon.
-</p>
+<section id="support" class="cta">
+<h2>We’re just getting started. Together, we can change lives.</h2>
+<p>Your support will help us fund our first projects, reach more families, and bring hope to children who need it most.</p>
+<a class="btn gold" href="mailto:brightstepscanada@gmail.com">Contact Us</a>
+<a class="btn outline" href="mailto:brightstepscanada@gmail.com">Get Involved</a>
 </section>
 
-<section id="support" class="mission">
-<h2>Support Our Mission</h2>
-<p>
-Community support will help us grow, fund our first projects, and begin helping
-children and families in a meaningful way.
-</p>
-<a href="mailto:brightstepscanada@gmail.com" class="button">Contact Us</a>
-</section>
-
-<footer>
-<p>© 2026 Bright Steps Canada</p>
-<p>Building brighter steps for children and families.</p>
+<footer id="contact">
+<h3>Bright Steps Canada</h3>
+<p>Helping children move forward, one step at a time.</p>
+<p>Email: brightstepscanada@gmail.com</p>
 </footer>
 
 </body>
