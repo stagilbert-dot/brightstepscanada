@@ -8,23 +8,20 @@ body {
 margin: 0;
 font-family: Arial, sans-serif;
 color: #06264a;
-background: #ffffff;
 }
 
 header {
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 18px 8%;
+padding: 14px 8%;
 background: white;
 }
 
-.logo-img {
-height: 75px;
-}
+.logo-img { height: 90px; }
 
 nav a {
-margin: 0 12px;
+margin: 0 15px;
 text-decoration: none;
 color: #06264a;
 font-weight: bold;
@@ -33,287 +30,246 @@ font-weight: bold;
 .donate {
 background: #e5a018;
 color: white;
-padding: 12px 26px;
+padding: 12px 24px;
 border-radius: 30px;
 text-decoration: none;
 font-weight: bold;
 }
 
+/* HERO */
 .hero {
+position: relative;
 display: grid;
-grid-template-columns: 1fr 1.2fr;
+grid-template-columns: 1fr 1.25fr;
 align-items: center;
-min-height: 560px;
-background: linear-gradient(to right, #ffffff 35%, #fff3dc);
+min-height: 600px;
 }
 
 .hero-text {
 padding-left: 8%;
-padding-right: 30px;
+z-index: 2;
 }
 
-h1 {
-font-size: 56px;
-line-height: 1.05;
-margin: 0;
+.hero h1 {
+font-size: 58px;
+margin-bottom: 20px;
 }
 
-h1 span {
-color: #e5a018;
-}
+.hero span { color: #e5a018; }
 
-p {
+.hero p {
+font-size: 18px;
 line-height: 1.6;
-font-size: 17px;
 }
 
 .hero-photo {
 width: 100%;
-height: 560px;
+height: 600px;
 object-fit: cover;
 }
 
+.hero::after {
+content: "";
+position: absolute;
+top: 0;
+left: 35%;
+width: 40%;
+height: 100%;
+background: linear-gradient(to right, white, rgba(255,255,255,0));
+}
+
 .btn {
-display: inline-block;
-margin: 12px 10px 0 0;
 padding: 14px 24px;
 border-radius: 8px;
 text-decoration: none;
+margin-right: 10px;
+display: inline-block;
 font-weight: bold;
 }
 
-.gold {
-background: #e5a018;
-color: white;
-}
+.gold { background: #e5a018; color: white; }
+.outline { border: 2px solid #06264a; color: #06264a; }
 
-.outline {
-border: 2px solid #06264a;
-color: #06264a;
-background: white;
-}
-
+/* VALUES BAR */
 .values {
 display: grid;
 grid-template-columns: repeat(4, 1fr);
-gap: 20px;
 background: #06264a;
 color: white;
 padding: 30px 8%;
+text-align: center;
 }
 
-.value h3 {
+.values div { padding: 10px; }
+
+.values h3 {
 color: #e5a018;
+margin-bottom: 5px;
 }
 
-section {
-padding: 60px 8%;
-}
+/* MISSION */
+section { padding: 60px 8%; }
 
 .split {
 display: grid;
 grid-template-columns: 1fr 1fr;
-gap: 45px;
+gap: 40px;
 align-items: center;
 }
 
-.image-card {
+.image-box {
 background: #fff4e0;
+padding: 60px;
 border-radius: 20px;
-padding: 45px;
 text-align: center;
 font-size: 80px;
 }
 
-.center {
-text-align: center;
-}
-
+/* HOW WE HELP */
 .cards {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 22px;
-margin-top: 25px;
+gap: 20px;
 }
 
 .card {
 background: #faf7f2;
-padding: 28px;
-border-radius: 16px;
-box-shadow: 0 4px 10px rgba(0,0,0,.06);
+padding: 25px;
+border-radius: 15px;
 }
 
-.card h3 {
-color: #06264a;
-}
-
+/* CTA */
 .cta {
 background: linear-gradient(to right, #fff3dd, #f1c77b);
+text-align: center;
 }
 
 footer {
 background: #06264a;
 color: white;
-padding: 35px 8%;
-}
-
-footer h3 {
-color: #e5a018;
-}
-
-@media(max-width:800px) {
-header {
-display: block;
+padding: 30px 8%;
 text-align: center;
 }
 
-nav {
-margin-top: 15px;
-}
+footer h3 { color: #e5a018; }
 
-nav a {
-display: block;
-margin: 8px;
-}
-
-.hero {
+/* MOBILE */
+@media(max-width:800px){
+.hero, .split, .cards, .values {
 grid-template-columns: 1fr;
 }
 
-.hero-text {
-padding: 40px 8%;
-text-align: center;
+.hero::after { display: none; }
+.hero-text { text-align: center; padding: 30px; }
 }
 
-.hero-photo {
-height: 350px;
-}
-
-h1 {
-font-size: 40px;
-}
-
-.values,
-.cards,
-.split {
-grid-template-columns: 1fr;
-}
-}
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="logo.png" class="logo-img" alt="Bright Steps Canada Logo">
-
+<img src="logo.png" class="logo-img">
 <nav>
 <a href="#mission">About</a>
 <a href="#help">How We Help</a>
 <a href="#support">Get Involved</a>
 <a href="#contact">Contact</a>
 </nav>
-
 <a class="donate" href="#support">Donate</a>
 </header>
 
+<!-- HERO -->
 <div class="hero">
 <div class="hero-text">
 <h1>Creating brighter futures for <span>children</span> in need.</h1>
+
 <p>
-Bright Steps Canada is being built to help children and families access
-wheelchairs, essential equipment, support, and moments of joy they need
-to live, move, and thrive.
+Bright Steps Canada is dedicated to helping children and families access
+essential equipment, support, and meaningful moments that help them live,
+move, and thrive.
 </p>
 
-<a class="btn gold" href="#help">Apply for Help</a>
-<a class="btn outline" href="#support">Support Our Mission</a>
+<a class="btn gold" href="#">👤 Apply for Help</a>
+<a class="btn outline" href="#">🤍 Support Our Mission</a>
 </div>
 
-<img src="hero.png" class="hero-photo" alt="Child in wheelchair at sunset">
+<img src="hero.png" class="hero-photo">
 </div>
 
+<!-- VALUES -->
 <div class="values">
-<div class="value">
-<h3>Compassion</h3>
+<div>
+<h3>🤍 Compassion</h3>
 <p>We lead with kindness in everything we do.</p>
 </div>
-
-<div class="value">
-<h3>Inclusion</h3>
+<div>
+<h3>👥 Inclusion</h3>
 <p>Every child deserves the chance to belong.</p>
 </div>
-
-<div class="value">
-<h3>Empowerment</h3>
+<div>
+<h3>🤝 Empowerment</h3>
 <p>We help families build stronger tomorrows.</p>
 </div>
-
-<div class="value">
-<h3>Hope</h3>
+<div>
+<h3>⭐ Hope</h3>
 <p>Small steps today, brighter futures tomorrow.</p>
 </div>
 </div>
 
+<!-- MISSION -->
 <section id="mission" class="split">
 <div>
 <h2>Our Mission</h2>
 <p>
-Our mission is to support children facing health, mobility, or life
-challenges by helping provide access to essential equipment, family
-support, and uplifting experiences that bring comfort, dignity, and joy.
+Our mission is to support children facing health, mobility, or life challenges
+by helping provide access to essential equipment, family support, and uplifting
+experiences that bring comfort, dignity, and joy.
 </p>
-
-<a class="btn gold" href="#support">Learn More About Us</a>
 </div>
 
-<div class="image-card">
-🧸💙
+<div class="image-box">
+🧸💛
 </div>
 </section>
 
-<section id="help" class="center">
-<h2>How We Help</h2>
+<!-- HOW WE HELP -->
+<section id="help">
+<h2 style="text-align:center;">How We Help</h2>
 
 <div class="cards">
 <div class="card">
-<h3>Mobility Equipment</h3>
-<p>
-Helping children access wheelchairs, adaptive equipment, and mobility supports.
-</p>
+<h3>♿ Mobility Equipment</h3>
+<p>Helping children access wheelchairs and adaptive equipment.</p>
 </div>
 
 <div class="card">
-<h3>Family Support</h3>
-<p>
-Helping families during challenging seasons with practical support and care.
-</p>
+<h3>👨‍👩‍👧 Family Support</h3>
+<p>Helping families through challenging seasons with practical support.</p>
 </div>
 
 <div class="card">
-<h3>Moments of Joy</h3>
-<p>
-Creating special experiences that help children feel seen, celebrated, and encouraged.
-</p>
+<h3>✨ Moments of Joy</h3>
+<p>Creating special experiences that bring happiness and encouragement.</p>
 </div>
 </div>
 </section>
 
+<!-- CTA -->
 <section id="support" class="cta">
 <h2>We’re just getting started. Together, we can change lives.</h2>
+
 <p>
-Your support will help us fund our first projects, reach more families,
-and bring hope to children who need it most.
+Your support helps us fund our first projects and reach children who need it most.
 </p>
 
-<a class="btn gold" href="mailto:brightstepscanada@gmail.com">Contact Us</a>
-<a class="btn outline" href="mailto:brightstepscanada@gmail.com">Get Involved</a>
+<a class="btn gold" href="mailto:brightstepscanada@gmail.com">📩 Contact Us</a>
 </section>
 
+<!-- FOOTER -->
 <footer id="contact">
 <h3>Bright Steps Canada</h3>
 <p>Helping children move forward, one step at a time.</p>
-<p>Email: brightstepscanada@gmail.com</p>
 <p>© 2026 Bright Steps Canada</p>
 </footer>
 
